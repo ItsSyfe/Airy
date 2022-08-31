@@ -1,0 +1,27 @@
+{
+  "name": "aery",
+  "packageManager": "yarn@3.2.3",
+  "dependencies": {
+    "@discordjs/rest": "^1.1.0",
+    "axios": "^0.27.2",
+    "axios-cookiejar-support": "^4.0.3",
+    "discord.js": "^14.3.0",
+    "dotenv": "^16.0.1",
+    "node-cron": "^3.0.2",
+    "sequelize": "^6.21.4",
+    "sqlite3": "^5.0.11",
+    "tough-cookie": "^4.1.2",
+    "winston": "^3.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "pm2": "^5.2.0",
+    "prettier": "^2.7.1"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=development node ./src/deploy.js && NODE_ENV=development nodemon ./src/bot.js",
+    "prod": "pm2 start ./src/bot.js --name Aery",
+    "deploy": "node ./src/deploy.js",
+    "pretty": "prettier --write \"./**/*.{js,jsx,json}\""
+  }
+}
